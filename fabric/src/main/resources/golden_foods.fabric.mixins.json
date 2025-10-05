@@ -1,14 +1,16 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.cursee.examplemod.mixin",
+  "package": "com.cursee.golden_foods.mixin",
+  "refmap": "${mod_id}.refmap.json",
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
   "client": [
-    "NeoForgeTitleScreenMixin"
+    "FabricTitleScreenMixin"
   ],
   "server": [],
   "injectors": {
     "defaultRequire": 1
   }
 }
+  

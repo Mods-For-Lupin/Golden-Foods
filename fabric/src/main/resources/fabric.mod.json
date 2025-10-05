@@ -16,10 +16,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.cursee.examplemod.ExampleModFabric"
+      "com.cursee.golden_foods.GoldenFoodsFabric"
     ],
     "client": [
-      "com.cursee.examplemod.ExampleModClientFabric"
+      "com.cursee.golden_foods.GoldenFoodsClientFabric"
     ]
   },
   "mixins": [

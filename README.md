@@ -1,1 +1,1 @@
-# 1.21.9-Template
+![Golden Foods Banner](https://www.bisecthosting.com/images/CF/Golden_Foods/BH_GF_header.webp)

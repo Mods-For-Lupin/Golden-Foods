@@ -1,7 +1,7 @@
-package com.cursee.examplemod.mixin;
+package com.cursee.golden_foods.mixin;
 
-import com.cursee.examplemod.Constants;
-import com.cursee.examplemod.platform.Services;
+import com.cursee.golden_foods.Constants;
+import com.cursee.golden_foods.platform.Services;
 import net.minecraft.client.Minecraft;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

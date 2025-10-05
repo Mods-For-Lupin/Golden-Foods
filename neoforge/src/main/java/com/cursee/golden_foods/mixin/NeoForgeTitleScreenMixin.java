@@ -1,7 +1,7 @@
-package com.cursee.examplemod.mixin;
+package com.cursee.golden_foods.mixin;
 
-import com.cursee.examplemod.Constants;
-import com.cursee.examplemod.platform.Services;
+import com.cursee.golden_foods.Constants;
+import com.cursee.golden_foods.platform.Services;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.TitleScreen;
 import org.spongepowered.asm.mixin.Mixin;
@@ -10,13 +10,13 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(TitleScreen.class)
-public class FabricTitleScreenMixin {
+public class NeoForgeTitleScreenMixin {
 
   @Inject(at = @At("HEAD"), method = "init()V")
   private void init(CallbackInfo info) {
 
     if (Services.PLATFORM.isDevelopmentEnvironment()) {
-      Constants.LOG.info("This line is printed by an example mod mixin from Fabric!");
+      Constants.LOG.info("This line is printed by an example mod mixin from NeoForge!");
       Constants.LOG.info("MC Version: {}", Minecraft.getInstance().getVersionType());
     }
   }

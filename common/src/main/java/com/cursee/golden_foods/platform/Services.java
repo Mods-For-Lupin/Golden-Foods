@@ -1,7 +1,7 @@
-package com.cursee.examplemod.platform;
+package com.cursee.golden_foods.platform;
 
-import com.cursee.examplemod.Constants;
-import com.cursee.examplemod.platform.services.IPlatformHelper;
+import com.cursee.golden_foods.Constants;
+import com.cursee.golden_foods.platform.services.IPlatformHelper;
 import java.util.ServiceLoader;
 
 // Service loaders are a built-in Java feature that allow us to locate implementations of an interface that vary from one

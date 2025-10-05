@@ -1,4 +1,4 @@
-package com.cursee.examplemod.platform.services;
+package com.cursee.golden_foods.platform.services;
 
 import java.nio.file.Path;
 

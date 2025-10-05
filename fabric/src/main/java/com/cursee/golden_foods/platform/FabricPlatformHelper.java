@@ -1,6 +1,6 @@
-package com.cursee.examplemod.platform;
+package com.cursee.golden_foods.platform;
 
-import com.cursee.examplemod.platform.services.IPlatformHelper;
+import com.cursee.golden_foods.platform.services.IPlatformHelper;
 import java.nio.file.Path;
 import net.fabricmc.loader.api.FabricLoader;
 

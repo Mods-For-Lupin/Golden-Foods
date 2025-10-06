@@ -19,6 +19,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.javafmlmod.FMLModContainer;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AnvilUpdateEvent;
 import net.neoforged.neoforge.registries.RegisterEvent;
 import oshi.util.tuples.Triplet;
@@ -39,7 +40,7 @@ public class GoldenFoodsNeoForge {
     GoldenFoods.init();
     if (dist == Dist.CLIENT) new GoldenFoodsClientNeoForge(modEventBus, fmlModContainer);
 
-    modEventBus.addListener(this::onAnvilUpdate);
+    NeoForge.EVENT_BUS.addListener(this::onAnvilUpdate);
   }
 
   public static <T> void bind(ResourceKey<Registry<T>> registry, Consumer<BiConsumer<T, ResourceLocation>> source) {

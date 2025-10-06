@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:gold_ingot"
-    },
-    "X": {
-      "item": "minecraft:cooked_chicken"
-    }
+    "#": "minecraft:gold_ingot",
+    "X": "minecraft:cooked_chicken"
   },
   "pattern": [
     "###",

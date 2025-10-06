@@ -2,6 +2,8 @@ package com.cursee.golden_foods.platform;
 
 import com.cursee.golden_foods.platform.services.IPlatformHelper;
 import java.nio.file.Path;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTab.Builder;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLLoader;
 
@@ -35,5 +37,10 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
   public String getGameDirectoryString() {
 
     return getGameDirectory().toString();
+  }
+
+  @Override
+  public Builder tabBuilder() {
+    return CreativeModeTab.builder();
   }
 }

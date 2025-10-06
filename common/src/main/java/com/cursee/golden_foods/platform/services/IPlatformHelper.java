@@ -1,6 +1,7 @@
 package com.cursee.golden_foods.platform.services;
 
 import java.nio.file.Path;
+import net.minecraft.world.item.CreativeModeTab;
 
 public interface IPlatformHelper {
 
@@ -39,4 +40,6 @@ public interface IPlatformHelper {
   Path getGameDirectory();
 
   String getGameDirectoryString();
+
+  CreativeModeTab.Builder tabBuilder();
 }

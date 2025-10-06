@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:gold_ingot"
-    },
-    "X": {
-      "item": "minecraft:bread"
-    }
+    "#": "minecraft:gold_ingot",
+    "X": "minecraft:bread"
   },
   "pattern": [
     "###",

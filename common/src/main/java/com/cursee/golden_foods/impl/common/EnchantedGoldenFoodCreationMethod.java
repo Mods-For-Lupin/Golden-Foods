@@ -11,7 +11,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import oshi.util.tuples.Triplet;
 
-public class EnchantedGoldenFoodCreationMethodFabric {
+public class EnchantedGoldenFoodCreationMethod {
 
     public static Triplet<Integer, Integer, ItemStack> createGoldenFoods(AnvilMenu instance, ItemStack slotLeft, ItemStack slotRight, ItemStack slotOutput, String leftSlotName, int baseCost, Player player) {
 

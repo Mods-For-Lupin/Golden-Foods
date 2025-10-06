@@ -1,22 +1,27 @@
 package com.cursee.golden_foods;
 
 
+import com.cursee.golden_foods.impl.common.EnchantedGoldenFoodCreationMethod;
 import com.cursee.golden_foods.impl.common.registry.ModBlocks;
 import com.cursee.golden_foods.impl.common.registry.ModItems;
 import com.cursee.golden_foods.impl.common.registry.ModTabs;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.inventory.AnvilMenu;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.bus.api.Event;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.javafmlmod.FMLModContainer;
+import net.neoforged.neoforge.event.AnvilUpdateEvent;
 import net.neoforged.neoforge.registries.RegisterEvent;
+import oshi.util.tuples.Triplet;
 
 @Mod(Constants.MOD_ID)
 public class GoldenFoodsNeoForge {
@@ -33,6 +38,8 @@ public class GoldenFoodsNeoForge {
 
     GoldenFoods.init();
     if (dist == Dist.CLIENT) new GoldenFoodsClientNeoForge(modEventBus, fmlModContainer);
+
+    modEventBus.addListener(this::onAnvilUpdate);
   }
 
   public static <T> void bind(ResourceKey<Registry<T>> registry, Consumer<BiConsumer<T, ResourceLocation>> source) {
@@ -41,5 +48,16 @@ public class GoldenFoodsNeoForge {
         source.accept((t, rl) -> event.register(registry, rl, () -> t));
       }
     });
+  }
+
+  public void onAnvilUpdate(final AnvilUpdateEvent event) {
+
+    final Triplet<Integer, Integer, ItemStack> triplet = EnchantedGoldenFoodCreationMethod.createGoldenFoods((AnvilMenu) null, event.getLeft(), event.getRight(), event.getOutput(), event.getName(), event.getXpCost(), event.getPlayer());
+
+    if (triplet != null && triplet.getC() != ItemStack.EMPTY) {
+      event.setXpCost(triplet.getA());
+      event.setMaterialCost(triplet.getB());
+      event.setOutput(triplet.getC());
+    }
   }
 }

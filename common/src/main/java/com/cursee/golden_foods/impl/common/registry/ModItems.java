@@ -123,9 +123,7 @@ public class ModItems {
 //        BuiltInRegistries.BLOCK.getKey(ModBlocks.ENCHANTED_GOLDEN_CAKE));
     REGISTERED.put("enchanted_golden_cake", ENCHANTED_GOLDEN_CAKE);
 
-    REGISTERED.entrySet().forEach(stringItemEntry -> {
-      consumer.accept(stringItemEntry.getValue(), GoldenFoods.identifier(stringItemEntry.getKey()));
-    });
+    REGISTERED.forEach((key, value) -> consumer.accept(value, GoldenFoods.identifier(key)));
 
 //    Stream<String> bases = Arrays.stream(GoldenFoodBases.values())
 //        .map(GoldenFoodBases::registryName);
